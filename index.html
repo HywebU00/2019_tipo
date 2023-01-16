@@ -1,0 +1,601 @@
+<!doctype html>
+<html lang="zh-Hant" class="no-js">
+
+<head>
+<meta name="robots" content="noindex">
+<!-- 使用 noindex 禁止 Google 搜尋建立索引，套版時請工程師刪掉這行 -->
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>單位名稱切版檔案</title>
+  <!--[if lt IE 9]>
+    <script src="js/html5shiv.js"></script>
+    <script src="js/respond.min.js"></script>
+  <![endif]-->
+  <!-- hyUI -->
+  <link rel="stylesheet" href="css/hyui.css">
+  <style>
+    .demo_wrap {
+      max-width: 1000px;
+      margin: 0em auto 1em;
+      padding: 15px 15px 3em;
+      clear: both;
+      background: #FFF
+    }
+    
+    .demo_wrap h1 {
+      display: block;
+      margin: 0px auto;
+      max-width: 300px;
+      float: left;
+      margin-right: 1em
+    }
+    
+    @media screen and (max-width:545px) {
+      .demo_wrap h1 {
+        max-width: 100%;
+        float: none;
+        text-align: center
+      }
+    }
+    
+    .demo_wrap h1 img {
+      width: 300px
+    }
+    
+    .num {
+      width: 12%
+    }
+    
+    body {
+      counter-reset: num
+    }
+    
+    table {
+      margin-bottom: 1em
+    }
+    
+    table caption {
+      text-align: left;
+      font-weight: bold;
+      font-size: 1.25em;
+      padding: .5em 0;
+      color: #ff5050
+    }
+    
+    tbody tr td:first-child:before {
+      counter-increment: num;
+      display: block;
+      text-align: center;
+      content: counters(num, ".") " "
+    }
+    
+    tbody tr td:nth-child(2) {
+      width: 35%
+    }
+    
+    .btn_grp {
+      text-align: right
+    }
+    
+    @media screen and (max-width:545px) {
+      .btn_grp {
+        text-align: center
+      }
+    }
+    
+    tbody tr.un {
+      background: #F3F3F3;
+    }
+    
+    tbody tr.un a {
+      color: #ccc;
+    }
+    
+    tbody tr.un a[href] {
+      content: ""
+    }
+    
+    tbody tr.un a::before {
+      content: "未完成－－－"
+    }
+  </style>
+</head>
+
+<body>
+  <div class="demo_wrap">
+    <h1><img src="images/logo.png" alt=""></h1>
+    <div class="btn_grp">
+      <a href="https://c2zuww.axshare.com/" class="btn" target="blank">規劃檔</a>
+    </div>
+    <hr>
+    <div class="table_wrapper">
+      <!-- hyUI 標準頁面 -->
+      <table>
+        <thead>
+          <tr>
+            <th class="num">編號</th>
+            <th>頁面名稱</th>
+            <th>檔案名稱</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td></td>
+            <td>首頁</td>
+            <!-- 連結放到a裡面就好 -->
+            <td>
+              <a href="mp.htm"></a>
+            </td>
+          </tr>
+          <tr>
+            <td></td>
+            <td>lp1 一般列表頁</td>
+            <td>
+              <a href="lp.php"></a>
+            </td>
+          </tr>
+          <tr>
+            <td></td>
+            <td>lp2 圖文列表頁</td>
+            <td>
+              <a href="lp2.php"></a>
+            </td>
+          </tr>
+          <tr>
+            <td></td>
+            <td>lp3 表格列表頁</td>
+            <td>
+              <a href="lp_table.php"></a>
+            </td>
+          </tr>
+          <tr>
+            <td></td>
+            <td>lp4 標題列表頁</td>
+            <td>
+              <a href="lp_title.php"></a>
+            </td>
+          </tr>
+          <tr>
+            <td></td>
+            <td>lp5 附件下載列表頁</td>
+            <td>
+              <a href="lp_file.php"></a>
+            </td>
+          </tr>
+          <tr>
+            <td></td>
+            <td>lp6 相簿列表頁</td>
+            <td>
+              <a href="lp_album.php"></a>
+            </td>
+          </tr>
+          <tr>
+            <td></td>
+            <td>lp7 混合查詢列表頁</td>
+            <td>
+              <a href="lp_search.php"></a>
+            </td>
+          </tr>
+          <tr>
+            <td></td>
+            <td>cp1 一般內容頁</td>
+            <td>
+              <a href="cp.php"></a>
+            </td>
+          </tr>
+          <tr>
+            <td></td>
+            <td>cp2 表格混合列表內容頁</td>
+            <td>
+              <a href="cp_list.php"></a>
+            </td>
+          </tr>
+          <tr>
+            <td></td>
+            <td>cp3 相簿內容頁</td>
+            <td>
+              <a href="cp_photo.php"></a>
+            </td>
+          </tr>
+          <tr>
+            <td></td>
+            <td>np 節點</td>
+            <td>
+              <a href="np.php"></a>
+            </td>
+          </tr>
+          <tr>
+            <td></td>
+            <td>fp 轉寄友人</td>
+            <td>
+              <a href="fp.php"></a>
+            </td>
+          </tr>
+          <tr>
+            <td></td>
+            <td>qp 條件查詢</td>
+            <td>
+              <a href="qp.php"></a>
+            </td>
+          </tr>
+          <tr>
+            <td></td>
+            <td>sitemap 網站地圖</td>
+            <td>
+              <a href="sitemap.php"></a>
+            </td>
+          </tr>
+          <tr>
+            <td></td>
+            <td>404 錯誤畫面</td>
+            <td>
+              <a href="404.htm"></a>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+      <!-- 專案客製化頁面 -->
+      <h2>電子報</h2>
+      <table>
+        <thead>
+          <tr>
+            <th class="num">編號</th>
+            <th>頁面名稱</th>
+            <th>檔案名稱</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td></td>
+            <td>sp1_1 電子報訂閱</td>
+            <td>
+              <a href="epaper.php"></a>
+            </td>
+          </tr>
+          <tr>
+            <td></td>
+            <td>sp1_2 取消電子報訂閱</td>
+            <td>
+              <a href="epaper_unsubscribe.php"></a>
+            </td>
+          </tr>
+          <tr>
+            <td></td>
+            <td>sp1_3 電子報列表</td>
+            <td>
+              <a href="epaper_list.php"></a>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+      <h2>問卷調查</h2>
+      <table>
+        <thead>
+          <tr>
+            <th class="num">編號</th>
+            <th>頁面名稱</th>
+            <th>檔案名稱</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td></td>
+            <td>sp2 問卷調查</td>
+            <td>
+              <a href="survey.php"></a>
+            </td>
+          </tr>
+          <tr>
+            <td></td>
+            <td>sp2_1 問卷說明</td>
+            <td>
+              <a href="survey_info.php"></a>
+            </td>
+          </tr>
+          <tr>
+            <td></td>
+            <td>sp2_2 問卷調查</td>
+            <td>
+              <a href="survey_content.php"></a>
+            </td>
+          </tr>
+          <tr>
+            <td></td>
+            <td>sp2_3 問卷統計結果</td>
+            <td>
+              <a href="survey_result.php"></a>
+            </td>
+          </tr>
+          <tr>
+            <td></td>
+            <td>sp2_4 問卷統計結果-意見回饋</td>
+            <td>
+              <a href="survey_feedback.php"></a>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+      <h2>檢警調專區</h2>
+      <table>
+        <thead>
+          <tr>
+            <th class="num">編號</th>
+            <th>頁面名稱</th>
+            <th>檔案名稱</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td></td>
+            <td>sp3 檢警調登入頁</td>
+            <td>
+              <a href="investigation.php"></a>
+            </td>
+          </tr>
+          <tr>
+            <td></td>
+            <td>sp3_1 專區_np節點</td>
+            <td>
+              <a href="investigation_np.php"></a>
+            </td>
+          </tr>
+          <tr>
+            <td></td>
+            <td>sp3_2 專區_lp1一般列表頁</td>
+            <td>
+              <a href="investigation_lp.php"></a>
+            </td>
+          </tr>
+          <tr>
+            <td></td>
+            <td>sp3_3 專區_cp1一般內容頁</td>
+            <td>
+              <a href="investigation_cp.php"></a>
+            </td>
+          </tr>
+          <tr>
+            <td></td>
+            <td>sp3_4 專區_qp條件查詢</td>
+            <td>
+              <a href="investigation_qp.php"></a>
+            </td>
+          </tr>
+          <tr>
+            <td></td>
+            <td>sp3_5 專區_fp轉寄友人</td>
+            <td>
+              <a href="investigation_fp.php"></a>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+      <table>
+        <thead>
+          <tr>
+            <th class="num">編號</th>
+            <th>頁面名稱</th>
+            <th>檔案名稱</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td></td>
+            <td>sp4 地圖</td>
+            <td>
+              <a href="map.php"></a>
+            </td>
+          </tr>
+          <tr>
+            <td></td>
+            <td>sp4 地圖</td>
+            <td>
+              <a href="map_2.php"></a>
+            </td>
+          </tr>
+          <tr>
+            <td></td>
+            <td>sp5 faq</td>
+            <td>
+              <a href="faq.php"></a>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+      <h2>國際專利分類</h2>
+      <table>
+        <thead>
+          <tr>
+            <th class="num">編號</th>
+            <th>頁面名稱</th>
+            <th>檔案名稱</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td></td>
+            <td>sp6 pc國際專利分類查詢 Lv1</td>
+            <td>
+              <a href="patent.php"></a>
+            </td>
+          </tr>
+          <tr>
+            <td></td>
+            <td>sp6_1 pc國際專利分類查詢 Lv2</td>
+            <td>
+              <a href="patent_2.php"></a>
+            </td>
+          </tr>
+          <tr>
+            <td></td>
+            <td>sp6_2 pc國際專利分類查詢 Lv3</td>
+            <td>
+              <a href="patent_3.php"></a>
+            </td>
+          </tr>
+          <tr>
+            <td></td>
+            <td>sp6_3 pc國際專利分類查詢 Lv4</td>
+            <td>
+              <a href="patent_4.php"></a>
+            </td>
+          </tr>
+          <tr>
+            <td></td>
+            <td>sp6_4 版本差異表</td>
+            <td>
+              <a href="patent_5.php"></a>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+      <h2>英文版</h2>
+      <table>
+        <thead>
+          <tr>
+            <th class="num">編號</th>
+            <th>頁面名稱</th>
+            <th>檔案名稱</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td></td>
+            <td>英文版首頁</td>
+            <td>
+              <a href="en_mp.htm"></a>
+            </td>
+          </tr>
+          <tr>
+            <td></td>
+            <td>lp1 一般列表頁</td>
+            <td>
+              <a href="en_lp.php"></a>
+            </td>
+          </tr>
+          <tr>
+            <td></td>
+            <td>lp2 圖文列表頁</td>
+            <td>
+              <a href="en_lp2.php"></a>
+            </td>
+          </tr>
+          <tr>
+            <td></td>
+            <td>其他頁面與中文版相同</td>
+            <td>其他頁面與中文版相同</td>
+          </tr>
+        </tbody>
+      </table>
+      <h2>主題網</h2>
+      <table>
+        <thead>
+          <tr>
+            <th class="num">編號</th>
+            <th>頁面名稱</th>
+            <th>檔案名稱</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td></td>
+            <td>專利en</td>
+            <td>
+              <a href="en_mp_patents.php"></a>
+            </td>
+          </tr>
+          <tr>
+            <td></td>
+            <td>著作權en</td>
+            <td>
+              <a href="en_mp_copyright.php"></a>
+            </td>
+          </tr>
+          <tr>
+            <td></td>
+            <td>商標en</td>
+            <td>
+              <a href="en_mp_trademarks.php"></a>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+      <h2>edm</h2>
+      <table>
+        <thead>
+          <tr>
+            <th class="num">編號</th>
+            <th>頁面名稱</th>
+            <th>檔案名稱</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td></td>
+            <td>寄送用</td>
+            <td>
+              <a href="edm/ch.html "></a>
+            </td>
+          </tr>
+          <tr>
+            <td></td>
+            <td>寄送用en</td>
+            <td>
+              <a href="edm/en.html "></a>
+            </td>
+          </tr>
+          <tr>
+            <td></td>
+            <td>寄送用商標</td>
+            <td>
+              <a href="edm/message.html "></a>
+            </td>
+          </tr>
+          <tr>
+            <td></td>
+            <td>網頁用</td>
+            <td>
+              <a href="edm.html"></a>
+            </td>
+          </tr>
+          <tr>
+            <td></td>
+            <td>網頁用en</td>
+            <td>
+              <a href="edm_en.html"></a>
+            </td>
+          </tr>
+          <tr>
+            <td></td>
+            <td>網頁用商標</td>
+            <td>
+              <a href="edm_message.html"></a>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+  <a href="javascript:;" class="scrollToTop">回頁首</a>
+  <!-- JQ -->
+  <script src="js/jquery-3.3.1.min.js"></script>
+  <!-- plugin js -->
+  <script src="vendor/jquery.easing.min.js"></script>
+  <script src="vendor/slick/slick.min.js "></script>
+  <script src="vendor/slick/slick-lightbox.js "></script>
+  <script src="vendor/lazyload/lazyload.min.js"></script>
+  <!-- nicescroll -->
+  <script src="vendor/nicescroll/jquery.nicescroll.min.js"></script>
+  <script src="js/hyui.js"></script>
+  <script src="js/customize.js"></script>
+  <script>
+    $(function() {
+      $('tbody').find('a').each(function(index, el) {
+        var Link = $(this).attr('href');
+        $(this).text(Link);
+      });
+    })
+  </script>
+</body>
+
+</html>

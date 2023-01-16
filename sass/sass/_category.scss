@@ -1,0 +1,184 @@
+.category_np{
+  ul{
+    @include li-reset;
+  }
+  li{
+    display: inline-block;
+    min-width: 20%;
+    margin-right: .3em;
+    a{
+      padding: .8em 1em;
+      color: #fff;
+      width: 100%;
+      display: block;
+      box-sizing:border-box;
+      position: relative;
+      background: #770f5a;
+      &:hover{
+        background: #b70184;
+      }
+      &:before{
+        content: "";
+        width: 100%;
+        height: 4px;
+        display: block;
+        position: absolute;
+        bottom: -4px;
+        left: 0;
+        background: #b70184;
+        // background: -moz-linear-gradient(90deg, #4bb5c8 0%, #21337c 100%);
+        // background: -webkit-linear-gradient(90deg, #4bb5c8 0%, #21337c 100%);
+        // background: linear-gradient(90deg, #4bb5c8 0%,#21337c 100%);
+        // filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#4bb5c8",endColorstr="#21337c",GradientType=1);
+      }
+
+    }
+  }
+}
+.category {
+  @extend %clearfix;
+  text-align: left;
+  margin: 1em auto;
+  ul {
+    @include li-reset;
+    z-index: 98;
+    li {
+      margin: 0px 0 5px 0px;
+      display: block;
+      float: left;
+      position: relative;
+      &:before{
+        content: "";
+        width: 1px;
+        height: 30px;
+        display: block;
+        position: absolute;
+        left: 0;
+        top: 50%;
+        margin-top: -15px;
+        background: #a0a0a0;
+      }
+      >ul{
+        position: absolute;
+        left: 0;
+        top: 44px;
+        z-index: 99;
+        width: 100%;
+        // opacity: 0;
+        // display: none;
+        li{
+          float: none;
+          margin-bottom: 0;
+          position: relative;
+          &:before{
+            display: none;
+          }
+          a{
+            padding: .4em 1em;
+            background: #193b75;
+            color: #fff;
+            width: 100%;
+            box-sizing:border-box;
+            position: relative;
+
+          }
+        }
+      }
+      >a {
+        padding: .5em 1.5em .6em;
+        display: inline-block;
+        color: #0b0000;
+        @include box-sizing();
+        border-radius:0;
+        position: relative;
+
+        &:hover,&:focus,&.active{
+          color: #FFF;
+          background: #00ac9c;
+          background: -moz-linear-gradient(180deg, #00ac9c 0%, #00ac9c 100%);
+          background: -webkit-linear-gradient(180deg, #00ac9c 0%, #00ac9c 100%);
+          background: linear-gradient(180deg, #00ac9c 0%,#00ac9c 100%);  
+          // &:before{
+          //   background: #00ac9c;
+          // }
+          ~ul{
+            display: block;
+            li a{
+              padding: .4em 1em;
+              &:before{
+                display: none;
+              }
+            }
+          }
+        }
+      }
+      &.hasChild{
+        >a{
+          &:after{
+            content: "";
+            width: 6px;
+            height: 6px;
+            display: block;
+            border-top: 2px solid #888;
+            border-right: 2px solid #888;
+            transform: rotate(135deg);
+            position: absolute;
+            right: .5em;
+            top: 1em;
+          }
+          &:hover,&:focus,&.active{
+            &:after{
+              border-top: 2px solid #fff;
+              border-right: 2px solid #fff;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+.category2{
+  clear: both;
+  display: block;
+  overflow: hidden;
+  margin: 1em auto;
+  ul{
+    @include li-reset;
+    li {
+      margin: 0px 6px 5px 0px;
+      display: block;
+      float: left;
+      a {
+        @include gradient(#FFF, #DDD, vertical);
+        border: 1px solid #CCC;
+        padding: .4em 1em;
+        display: block;
+        color: #333;
+        @include box-sizing();
+        &:hover,
+        &:focus {
+          color: #FFF;
+          @include gradient(darken($primaryColor, 0), darken($primaryColor, 15), vertical);
+          border: 1px solid darken($primaryColor, 15);
+          box-shadow: none;
+        }
+        &.active {
+          color: #FFF;
+          @include gradient(darken($primaryColor, 0), darken($primaryColor, 15), vertical);
+          border: 1px solid darken($primaryColor, 15);
+        }
+        span {
+          font-size: .813em;
+          &:before {
+            content: "(";
+            display: inline-block;
+          }
+          &:after {
+            content: ")";
+            display: inline-block;
+          }
+        }
+      }
+    }
+  }
+}

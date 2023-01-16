@@ -1,0 +1,184 @@
+.fatfooter {
+    @include make-fatfooter($fatfooter-length, 100%);
+    @extend %clearfix;
+    overflow: hidden;
+    padding-bottom: 1em;
+    margin: 0 auto;
+    background: $fatfooterBgColor;
+      @include screen('mobile') {
+        padding: 0;
+    }
+    .container {
+        overflow: hidden;
+        @include box-sizing;
+        @include gutter;
+    }
+    // fat_btn
+    .fat_btn {
+        @extend %clearfix;
+        padding: 3em 10em 0;
+        border-bottom: 1px solid #999;
+         @include screen('tablet') {
+            padding: 3em 2em 0;
+        }
+        @include screen('mobile') {
+            border-bottom: none;
+            padding:1em 0 0;
+        }
+        ul {
+            @include li-reset;
+            li {
+                width: 25%;
+                display: block;
+                float: left;
+                @include screen('mobile') {
+                    width:50%;
+                }
+                a {
+                    line-height: 1.25em;
+                    display: block;
+                    padding: .5em;
+                    @include box-sizing;
+                    color: #FFF;
+                    &:hover, &:focus {
+                        color: $aHoveronDark;
+                    }
+                    @include screen('mobile') {
+                        padding:.3em;
+                    }
+                    img {
+                        display: inline-block;
+                        vertical-align: middle;
+                    }
+                }
+            }
+        }
+    }
+    // 按鈕
+    .btn-fatfooter {
+        font-size: .813em;
+        display: block;
+        min-width: 6em;
+        color: #FFF;
+        border: none;
+        background:#000;
+        position: absolute;
+        left: 50%;
+        top:-4px;
+        margin-left: -3em;
+        z-index: 90;
+        text-indent: -9999px;
+        border-radius:0px;
+        &:before {
+            content: "";
+            position: absolute;
+            width: 12px;
+            height: 12px;
+            border: 2px solid #FFF;
+            border-left: none;
+            border-bottom: none;
+            transform: rotate(-45deg);
+            left: 50%;
+            top: 12px;
+            margin-left: -6px;
+            transition: .3s ease-out;
+        }
+        &:hover,
+        &:focus {
+            background: $aHover;
+            color: #fff;
+            text-decoration: none;
+            cursor: pointer;
+            border: none;
+            box-shadow: none;
+            outline: none;
+            border: none;
+            cursor: pointer;
+        }
+        &.close {
+            &:before {
+                transform: rotate(135deg) !important;
+                top: 5px;
+            }
+        }
+        @include screen('mobile') {
+            display:none;
+        }
+    }
+    nav {
+        overflow: hidden;
+        display: block;
+        position: relative;
+        padding: 1em 0 0 2em;
+        @include box-sizing;
+        @include screen('mobile') {
+            padding: 1em 0;
+            display:none;
+        }
+        ul {
+            @include li-reset;
+            @include screen('mobile') {
+                width: 100%;
+                display: block;
+                margin: 0px auto;
+            }
+            li {
+                display: inline-block;
+                text-align: left;
+                vertical-align: top;
+                margin: 0 -5px 1em 0;
+                @include box-sizing;
+                @include screen('mobile') {
+                    display: block;
+                    margin: 0 0 .4em
+                }
+                a {
+                    line-height: 1.5;
+                    display: block;
+                    font-weight: bold;
+                    padding: .5em 0px;
+                    @include box-sizing;
+                    color: $aColoronDark;
+                    &:hover {
+                        color: $aHoveronDark;
+                        box-shadow: none;
+                    }
+                }
+                ul {
+                    margin-top: 5px;
+                    @include screen('mobile') {
+                        width: auto;
+                        padding-left: 2em;
+                    }
+                    li {
+                        display: block;
+                        margin: 0;
+                        border: none;
+                        background: none;
+                        width: 100%;
+                        a {
+                            display: block;
+                            color: #FEFEFE;
+                            font-weight: normal;
+                            text-align: left;
+                            font-size: .813em;
+                            line-height: 1.5em;
+                            padding: .5em .2em;
+                            background: none;
+                            &:hover, &:focus {
+                                color: $aHoveronDark;
+                            }
+                            @include screen('mobile') {
+                                padding: .3em .2em;
+                            }
+                        }
+                    }
+                    //第三層關閉
+                    ul {
+                        display: none;
+                    }
+                }
+            }
+        }
+    }
+}
