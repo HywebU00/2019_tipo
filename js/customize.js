@@ -1,6 +1,6 @@
 // 自行加入的JS請寫在這裡
 $(function() {
-    // lazyload  
+    // lazyload
     //可以指定你想要的元素做lazyload
     $("img").lazyload({ effect: "fadeIn" });
     //請放置customize.js
@@ -322,39 +322,39 @@ $(function(){
     });
 })
 $(function(){
-    jQuery('img.svg').each(function(){   
-        var $img = jQuery(this);   
-        var imgID = $img.attr('id');   
-        var imgClass = $img.attr('class');   
-        var imgURL = $img.attr('src');   
-        
-        jQuery.get(imgURL, function(data) {   
-        // Get the SVG tag, ignore the rest   
-        var $svg = jQuery(data).find('svg');   
-        
-        // Add replaced image's ID to the new SVG   
-        if(typeof imgID !== 'undefined') {   
-            $svg = $svg.attr('id', imgID);   
-        }   
-        // Add replaced image's classes to the new SVG   
-        if(typeof imgClass !== 'undefined') {   
-            $svg = $svg.attr('class', imgClass+' replaced-svg');   
-        }   
-        
-        // Remove any invalid XML tags as per http://validator.w3.org   
-        $svg = $svg.removeAttr('xmlns:a');   
-        
-        // Check if the viewport is set, if the viewport is not set the SVG wont't scale.   
-        if(!$svg.attr('viewBox') && $svg.attr('height') && $svg.attr('width')) {   
-            $svg.attr('viewBox', '0 0 ' + $svg.attr('height') + ' ' + $svg.attr('width'))   
-        }   
-        
-        // Replace image with new SVG   
-        $img.replaceWith($svg);   
-        
-    }, 'xml');   
-        
-    });  
+    jQuery('img.svg').each(function(){
+        var $img = jQuery(this);
+        var imgID = $img.attr('id');
+        var imgClass = $img.attr('class');
+        var imgURL = $img.attr('src');
+
+        jQuery.get(imgURL, function(data) {
+        // Get the SVG tag, ignore the rest
+        var $svg = jQuery(data).find('svg');
+
+        // Add replaced image's ID to the new SVG
+        if(typeof imgID !== 'undefined') {
+            $svg = $svg.attr('id', imgID);
+        }
+        // Add replaced image's classes to the new SVG
+        if(typeof imgClass !== 'undefined') {
+            $svg = $svg.attr('class', imgClass+' replaced-svg');
+        }
+
+        // Remove any invalid XML tags as per http://validator.w3.org
+        $svg = $svg.removeAttr('xmlns:a');
+
+        // Check if the viewport is set, if the viewport is not set the SVG wont't scale.
+        if(!$svg.attr('viewBox') && $svg.attr('height') && $svg.attr('width')) {
+            $svg.attr('viewBox', '0 0 ' + $svg.attr('height') + ' ' + $svg.attr('width'))
+        }
+
+        // Replace image with new SVG
+        $img.replaceWith($svg);
+
+    }, 'xml');
+
+    });
 })
 $(function(){
     $(".nation ul li a,.nation2 ul li a").hover(function() {
@@ -395,3 +395,294 @@ $(function(){
     });
 });
 
+
+
+
+
+
+
+
+function jsSlideDown(element, time) {
+    let ele = window.getComputedStyle(element);
+    let display = ele.display;
+    let speed = time || 200;
+    element.style.display = display;
+    if (display === 'none') {
+      element.style.display = 'block';
+      element.style.overflow = 'hidden';
+      let totalHeight = element.offsetHeight;
+      element.style.height = '0px';
+      element.style.transitionProperty = 'height';
+      element.style.transitionDuration = `${speed}ms`;
+      setTimeout(() => {
+        element.style.height = `${totalHeight}px`;
+      }, 10);
+      setTimeout(() => {
+        element.style.removeProperty('height');
+        element.style.removeProperty('overflow');
+        element.style.removeProperty('transition-duration');
+        element.style.removeProperty('transition-property');
+      }, speed);
+    }
+  }
+
+  function jsSlideUp(element, time) {
+    let ele = window.getComputedStyle(element);
+    let display = ele.display;
+    let speed = time || 200;
+    element.style.display = display;
+    if (display !== 'none') {
+      let totalHeight = element.offsetHeight;
+      element.style.overflow = 'hidden';
+
+      element.style.height = `${totalHeight}px`;
+      element.style.transitionProperty = 'height';
+      element.style.transitionDuration = `${speed}ms`;
+      setTimeout(() => {
+        element.style.height = `0px`;
+      }, 10);
+      setTimeout(() => {
+        element.style.display = 'none';
+        element.style.removeProperty('height');
+        element.style.removeProperty('overflow');
+        element.style.removeProperty('transition-duration');
+        element.style.removeProperty('transition-property');
+      }, speed);
+    }
+  }
+  function jsSlideToggle(element, time) {
+    let ele = window.getComputedStyle(element);
+    let display = ele.display;
+    let speed = time || 200;
+    element.style.display = display;
+    if (display === 'none') {
+      element.style.display = 'block';
+      let totalHeight = element.offsetHeight;
+      element.style.overflow = 'hidden';
+      element.style.height = '0px';
+      element.style.transitionProperty = 'height';
+      element.style.transitionDuration = `${speed}ms`;
+      setTimeout(() => {
+        element.style.height = `${totalHeight}px`;
+      }, 10);
+      setTimeout(() => {
+        element.style.removeProperty('height');
+        element.style.removeProperty('overflow');
+        element.style.removeProperty('transition-duration');
+        element.style.removeProperty('transition-property');
+      }, speed);
+    } else {
+      let totalHeight2 = element.offsetHeight;
+      element.style.overflow = 'hidden';
+      element.style.height = `${totalHeight2}px`;
+      element.style.transitionProperty = 'height';
+      element.style.transitionDuration = `${speed}ms`;
+      setTimeout(() => {
+        element.style.height = `0px`;
+      }, 10);
+      setTimeout(() => {
+        element.style.display = 'none';
+        element.style.removeProperty('height');
+        element.style.removeProperty('overflow');
+        element.style.removeProperty('transition-duration');
+        element.style.removeProperty('transition-property');
+      }, speed);
+    }
+  }
+
+
+function randomFloor(min, max) {
+    return Math.floor(Math.random() * (max - min + 1) + min);
+  }
+
+  // 亂數英文字
+  function randomLetter(max) {
+    let text = '';
+    let letter = 'abcdefghijklmnopqrstuvwxyz';
+
+    for (let i = 0; i < max; i++) text += letter.charAt(Math.floor(Math.random() * letter.length));
+    return text;
+  }
+
+function accordionFunction(obj) {
+    'use strict';
+    const accordion = document.querySelector(obj.target);
+    const autoClose = obj.autoClose;
+    const openSwitch = obj.openSwitch;
+    const openFirst = obj.openFirst;
+    const { open, close } = obj.info;
+
+    if (accordion) {
+      let id = [];
+      let accordionState;
+      const accordionList = accordion.querySelectorAll('.accordionList');
+      const accordionBtn = accordion.querySelectorAll('.accordionBtn');
+      const accordionContent = accordion.querySelectorAll('.accordionContent');
+
+      const count = accordionList.length;
+      let nowIndex = obj.index === null ? null : obj.index <= count ? obj.index : count;
+      const lastTab = accordionList[accordionList.length - 1];
+
+      for (let i = 0; i < accordionList.length; i++) {
+        id.push(`accordion_${randomLetter(3)}${randomFloor(0, 999)}`);
+      }
+
+      const init = () => {
+        accordionList.forEach((content) => content.classList.remove('active'));
+        // 增加無障礙設置
+        accordionList.forEach((item, index) => {
+          accordionBtn[index].insertAdjacentHTML('beforeend', `<span class="accordionState">${open}</span>`);
+          accordionBtn[index].insertAdjacentHTML('beforeend', `<span class="accordionArrow"></span>`);
+          accordionBtn[index].setAttribute('aria-expanded', 'false');
+          accordionBtn[index].setAttribute('aria-controls', id[index]);
+          accordionBtn[index].setAttribute('role', 'button');
+          accordionContent[index].setAttribute('id', id[index]);
+          accordionContent[index].setAttribute('aria-labelledby', id[index]);
+          accordionState = accordion.querySelectorAll('.accordionState');
+        });
+
+        if (nowIndex !== null) {
+          accordionList[nowIndex].classList.add('active');
+          accordionBtn[nowIndex].setAttribute('aria-expanded', 'true');
+          jsSlideDown(accordionContent[nowIndex]);
+          accordionState[nowIndex].textContent = close;
+        }
+      };
+
+      init();
+
+      // 預先展開模式
+      function openCheck() {
+        if (!openFirst && nowIndex !== null) {
+          const siblings = Array.prototype.filter.call(accordionContent[nowIndex].parentElement.parentElement.children, (child) => {
+            return child !== accordionContent[nowIndex].parentElement;
+          });
+          siblings.forEach((item) => jsSlideUp(item.querySelector('.accordionContent')));
+        } else if (!openFirst && nowIndex === null) {
+          accordionContent.forEach((item) => jsSlideUp(item));
+        } else {
+          accordionState.forEach((item) => (item.textContent = close));
+          accordionContent.forEach((item) => jsSlideDown(item));
+          // 預先展開模式
+          openFirst ? accordionList.forEach((item) => item.classList.add('active')) : null;
+        }
+      }
+      openCheck();
+
+      accordionList.forEach((item, index) => {
+        const itemAllTarget = accordionContent[index].querySelectorAll('a,button,input,textarea,select');
+        const firstItem = [...itemAllTarget][0];
+        const lastItem = [...itemAllTarget][itemAllTarget.length - 1];
+        const prevItemAllTarget = accordionContent[index - 1]?.querySelectorAll('a,button,input,textarea,select');
+        const siblings = Array.prototype.filter.call(accordionList[index].parentElement.children, (child) => {
+          return child !== accordionList[index];
+        });
+
+        // 點擊
+        if (openSwitch) {
+          accordionBtn[index].addEventListener('click', (e) => {
+            e.preventDefault();
+            handleToggle(index);
+          });
+
+          // 鍵盤
+          accordionBtn[index].addEventListener('keydown', function (e) {
+            if (e.which === 13) { // Enter 鍵
+              e.preventDefault();
+              handleToggle(index);
+            }
+
+            if (e.which === 9 && !e.shiftKey) { // Tab 鍵
+              e.preventDefault();
+              handleTab(index, firstItem, true);
+            } else if (e.which === 9 && e.shiftKey) { // Shift + Tab 鍵
+              e.preventDefault();
+              handleTab(index, lastItem, false);
+            }
+          });
+
+          // 處理展開或收合的邏輯
+          function handleToggle(index) {
+            const siblings = Array.prototype.filter.call(accordionList[index].parentElement.children, (child) => {
+              return child !== accordionList[index];
+            });
+
+            accordionList[index].classList.toggle('active');
+            jsSlideToggle(accordionContent[index]);
+            accordionState[index].textContent === close ? (accordionState[index].textContent = open) : (accordionState[index].textContent = close);
+
+            nowIndex = index;
+
+            if (autoClose) {
+              siblings.forEach((con) => {
+                jsSlideUp(con.querySelector('.accordionContent'));
+                con.classList.remove('active');
+                con.querySelector('.accordionBtn').setAttribute('aria-expanded', 'false');
+              });
+            }
+          }
+
+          // 處理 Tab 鍵邏輯
+          function handleTab(index, item, isForward) {
+            accordionList[index].classList.add('active');
+            accordionState[index].textContent = close;
+            nowIndex = index;
+
+            if (autoClose & !openFirst) {
+              const siblings = Array.prototype.filter.call(accordionList[index].parentElement.children, (child) => {
+                return child !== accordionList[index];
+              });
+              siblings.forEach((con) => {
+                siblings.forEach((content) => content.classList.remove('active'));
+                jsSlideUp(con.querySelector('.accordionContent'));
+                con.querySelector('.accordionState').textContent = open;
+                con.classList.remove('active');
+              });
+            }
+
+            jsSlideDown(accordionContent[index]);
+            if (itemAllTarget.length > 0) {
+              item.focus();
+            } else if (itemAllTarget.length === 0) {
+              if (isForward) {
+                accordionList[index + 1]?.focus();
+              } else {
+                accordionBtn[index - 1]?.focus();
+              }
+            }
+          }
+        }
+
+
+
+        // 內容鍵盤遊走
+        itemAllTarget.forEach((n, i) => {
+          if (n) {
+            n.addEventListener('keydown', function (e) {
+              if (e.which === 9 && e.shiftKey) {
+                if (e.target === firstItem) {
+                  accordionBtn[index]?.focus();
+                } else if (itemAllTarget.length === 0) {
+                  accordionBtn[index - 1]?.focus();
+                }
+              }
+            });
+          }
+        });
+      });
+    }
+  }
+  window.addEventListener('load', () => {
+    // 手風琴功能
+    accordionFunction({
+      target: '.applyAccordion',
+      openFirst: false, // 預設先展開所有內容，鍵盤的自動開合功能無效
+      autoClose: false, // 點擊時自動關閉已展開的項目，若需要此功能需要關閉openFirst
+      openSwitch: true, // 是否可開合
+      index: 0, // 預設開啟第幾個
+      info: {
+        open: '展開', // 收合時顯示
+        close: '收合', // 展開時顯示
+      },
+    });
+  });
